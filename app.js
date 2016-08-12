@@ -19,10 +19,26 @@ app.use(session({
   cookie: { secure: false }
 }));
 
-app.use(flash());
+app.get('/', function(req,res){
+res.render('index')
+});
+
+// var wh = require('whitehouse'),
+//     whApi = wh.createWhiteHouse()
+
+// whApi.getPetitions(function(output) {
+//   var obj = JSON.parse(output)
+//   console.log(obj)
+// })
+
+
+
+
+
+// app.use(flash());
 
 app.listen(3000, function () {
-  console.log('Auth Demo App Online!');
+  console.log('Citizenry App Online!');
 });
 
 app.use(function(err, req, res, next){
