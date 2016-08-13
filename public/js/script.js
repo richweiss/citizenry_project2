@@ -1,16 +1,43 @@
+$(document).ready(function(){
+
+
+function saveSearch(keyword){
+      var search = {data: keyword}
+      $.ajax({
+      "url": "/searches",
+      "method":"POST",
+      "data": search,
+      "success": function(data){
+        // save search to db
+        console.log(data);
+      },
+      error: function(){
+        console.log('nope');
+      }
+    }); // ends ajax call
+}
+
+
+
 function ajaxcall(keyword){
     $.ajax({
-      "url":"https://api.whitehouse.gov/v1/petitions.json?limit=3%offset=0&title=" + searchterm,
+      "url":"https://api.whitehouse.gov/v1/petitions.json?limit=3%offset=0&title=" + keyword,
       "method":"GET",
       "success": function(data){
-        console.log(data)
+        // save search to db
+        saveSearch(keyword)
+        console.log(data);
+      },
+      error: function(){
+        console.log('nope');
       }
-    })
+    }); // ends ajax call
   }
 
     $('body').on("click", "#submit", function(e){
         e.preventDefault();
-        var searchstuff = $('#search-keyword').val()
+        var searchstuff = $('#search-keyword').val();
+        console.log(searchstuff);
         ajaxcall(searchstuff)
 
     });
@@ -84,3 +111,5 @@ function ajaxcall(keyword){
 //   var obj = JSON.parse(output)
 //   console.log(obj)
 // })
+
+  });

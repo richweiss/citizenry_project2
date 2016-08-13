@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS searches;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -8,6 +9,6 @@ CREATE TABLE users (
 
 CREATE TABLE searches (
   id SERIAL PRIMARY KEY,
-  user_id VARCHAR(255) REFERENCES users(id),
+  user_id INTEGER REFERENCES users(id),
   searchentry VARCHAR(255)
 );

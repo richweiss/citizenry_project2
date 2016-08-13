@@ -4,6 +4,7 @@ const mustacheExpress = require('mustache-express');
 const bodyParser = require("body-parser");
 const session = require('express-session');
 const flash = require('connect-flash');
+const router = express.Router();
 
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
@@ -20,9 +21,10 @@ app.use(session({
 }));
 
 app.get('/', function(req,res){
-res.render('index')
+  res.render('index')
 });
 
+// This is samplecode from the whitehouse node module. Guessing this would actually go in my script.js as that's where currenct Ajax/API call is taking place.
 // var wh = require('whitehouse'),
 //     whApi = wh.createWhiteHouse()
 
@@ -31,6 +33,12 @@ res.render('index')
 //   console.log(obj)
 // })
 
+
+app.post('/searches', function(req, res){
+  console.log(req.body);
+  db.none('INSERT INTO searches (searchentry) VALUES ($1)', [req.body.data])
+  console.log('create done')
+})
 
 
 
@@ -45,4 +53,4 @@ app.use(function(err, req, res, next){
   res.status(err.status || 500);
 });
 
-const router = require('./router')(app);
+// const router = require('./router')(app);
