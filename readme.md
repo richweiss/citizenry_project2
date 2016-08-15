@@ -19,7 +19,19 @@ app that ….
     - pulls songs from soundcloud
     - connects them wth P4k review (JOIN TABLES)
     - users can POST comments (forum) 
+ 
+    Find a Problem: I want people to go take their political rants elsewhere so facebook feeds can be decluttered and focused on what really matters between friends: FOMO creation, stalking your ex's, and silly videos of cats & dogs. 
 
+        Idea: Citizenry - an activism site/app where users can research and discuss political views with opportunities to contribute to petitions or meet IRL.
+
+        User Stories: As a User, I want to... 
+                      * search Petitions by Search Type/Topic
+                      * have my Log IN (Session) saved. 
+                      * my Searches to be Saved so I can see my journey & what I am trending toward.
+                      *  POST comments under specific Petitions so discuss topics with other Users.
+                      *  EDIT  & DELETE those comments.
+
+* MVP: Get the damn searches to appear on a redirected page.
 
 Day 1 | Aug 11th
 
@@ -57,8 +69,8 @@ Day 2 | Aug 12th
                 -display from our DB (using res.render)
     - use MUSTACHE later to view linked DB info in HTML's
 
-# Inquiries
-    - MAIN ISSUE: creating my SEARCH form (do I do this under USERS folder to touch a new html? for users already LOGGED IN)// Jared helped yay!
+# Inquiries - UPDATE: Jared was able to help with Main Issue & answer all inquiries. He is a rock star! Still confused a bit on the ROUTES section, but everything is very clear. 
+    - MAIN ISSUE: creating my SEARCH form (do I do this under USERS folder to touch a new html?) for users already LOGGED IN
                 
                 - THEN connecting that to 'click' button in script.js to html where SEARCH box is
                     
@@ -70,7 +82,9 @@ Day 2 | Aug 12th
         -  what is this ROUTES folder doing & do I need to utilize it?
         - Bryan's db is auth/ - should I create another one or using this one is ok? I'm assuming the latter, but need to check. 
 
-        - sessions setupd - sign up , log in , create users, 
+
+Next Steps
+        - sessions setup - sign up , log in , create users, 
         - grab from server - add to DB 
 
 

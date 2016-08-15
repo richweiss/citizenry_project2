@@ -17,8 +17,6 @@ function saveSearch(keyword){
     }); // ends ajax call
 }
 
-
-
 function ajaxcall(keyword){
     $.ajax({
       "url":"https://api.whitehouse.gov/v1/petitions.json?limit=3%offset=0&title=" + keyword,
@@ -42,6 +40,59 @@ function ajaxcall(keyword){
 
     });
 
+$('.deleteuser').on('click',function(e){
+    e.preventDefault()
+    id = $(this).attr('data-id')
+    div = $(this).parent()
+    $.ajax({
+      "url":"http://localhost:3000/users/"+id,
+      "method":"DELETE",
+      "success":function(){
+        $(div).remove()
+      }
+    })
+  })
+
+  $('#edituser').on('submit',function(e){
+    console.log('edit user worked')
+    e.preventDefault()
+
+    id = $(this).attr('data-id')
+    name = $(this).children('#name').val()
+    email = $(this).children('#email').val()
+    password = $(this).children('#password').val()
+
+    user = {id:id,name:name,email:email,password:password}
+    $.ajax({
+      "url":"http://localhost:3000/users/"+id,
+      "method":"PUT",
+      "data":user,
+      "success": function(data){
+        console.log('successfully put')
+      }
+    })
+  })
+
+
+  $('#createuser').on('submit',function(e){
+    e.preventDefault()
+
+    name = $(this).children('#name').val()
+    email = $(this).children('#email').val()
+    password = $(this).children('#password').val()
+
+    user = {name:name,email:email,password:password}
+    // debugger
+    $.ajax({
+      "url": "http://localhost:3000/users",
+      "method": "POST",
+      "data": user,
+      "success": function(data){
+        console.log('this worked.')
+        window.location.replace("http://localhost:3000/users")
+      }
+    })
+  })
 
 // $(function(){
 //   console.log('alive.')
