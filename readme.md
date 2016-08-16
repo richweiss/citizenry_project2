@@ -34,7 +34,7 @@ IDEAS
 
 * MVP: Get the damn searches to appear on a redirected page.
 
-Day 1 | Aug 11th
+#Day 1 | Aug 11th
 
 * Convo with John - holding off on creating new Heroku on Monday
     - I saw possible issues arising from initializing a Heroku git inside of my P2 folder (desktop, separate from Pangolins git) was already git initialized. 
@@ -54,7 +54,7 @@ Day 1 | Aug 11th
      -helped hit API using Postman
     - no need for key in url; key retrieved is for Write API (?) usage
 
-Day 2 | Aug 12th
+#Day 2 | Aug 12th
 
 * Added 'click' to script.js', check html usage
 
@@ -68,7 +68,7 @@ Day 2 | Aug 12th
 
 [Search draft](http://i.imgur.com/m7aALVY.png)
 
-# Notes 
+* Notes 
     - script.js = 
         front-end, 
         use AJAX to pull your Petitions when Searched,
@@ -99,7 +99,7 @@ Next Steps
         - sessions setup - sign up , log in , create users, 
         - grab from server - add to DB 
 
-Day 3 & 4 | Aug 13th & 14th
+#Day 3 & 4 | Aug 13th & 14th
 
     * Confusion on why routes and log-in are not running correctly.
 
@@ -109,7 +109,7 @@ Day 3 & 4 | Aug 13th & 14th
 
     * Adjusted app.js so Login page appears, not Welcome page with Search button.
 
-Day 5 | Aug 15th
+#Day 5 | Aug 15th
 
     * Starting to write commentary in app.js to describe what each thing is DOING or trying to DO. 
 
@@ -141,11 +141,16 @@ Day 5 | Aug 15th
         - Discovered Login Issues were because on Day 2 when I unlinked router folders and the Login, Bcrypt, and Saving Users to DB.
         next steps: connecting app.post('/sessions/create', in app.js
 
-Day 6 | Aug 16th
+#Day 6 | Aug 16th
     
     * Reviewing Irwin's next steps: connecting app.post('/sessions/create', in app.js
 
+    * Realizing I have duplicate CREATE USER type folders: one in sessions/create, the other in users/create. It appears both paths are being used. Looking into both, seeing if I can kill of a redundancy I may be linking to paths that should not exist. 
+
     * Since I'm getting issues because I disconnected the routes (kills db.js, login, signup, etc) going to load boilerplate into a different folder and seeing what I can do from there. If successful will scrap this original folder and replace code. 
+
+        - This page loads correctly in TEST FOLDER where it does not in Citizenry App: http://localhost:4000/sessions/new
+
 
     * If I get stuck I need to get the following done while waiting for help:
 

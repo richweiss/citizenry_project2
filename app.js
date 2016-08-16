@@ -34,10 +34,6 @@ app.get('/users/new', function(req,res){
   res.render('users/new')
 });
 
-app.get('/sessions/create', function(req,res){
-  res.render('sessions/new')
-});
-
 // This saves SEARCH ENTRIES into DB
 app.post('/searches', function(req, res){
   console.log(req.body);
@@ -60,45 +56,50 @@ app.post('/searches', function(req, res){
 // });
 
 
-app.get('/users',function(req,res){
-  db.any('SELECT * FROM users').then(function(data){
-    var users = {'users':data}
-    res.render('index',users)
-  })
-});
+// app.get('/users',function(req,res){
+//   db.any('SELECT * FROM users').then(function(data){
+//     var users = {'users':data}
+//     res.render('index',users)
+//   })
+// });
 
-app.get('/users/:id',function(req,res){
-  db.one('SELECT * FROM users WHERE id = $1',[req.params.id]).then(function(data){
-    var user = data
-    res.render('single',user)
-  })
-});
+// app.get('/users/:id',function(req,res){
+//   db.one('SELECT * FROM users WHERE id = $1',[req.params.id]).then(function(data){
+//     var user = data
+//     res.render('single',user)
+//   })
+// });
 
-app.put('/users/:id',function(req,res){
-  user = req.body
-  db.none("UPDATE users SET name=$1, email=$2, password=$3 WHERE id=$4",
-    [user.name,user.email,user.password,user.id]).then(function(data){
-      console.log('it worked')
-      res.json(user)
-    })
-})
+// app.put('/users/:id',function(req,res){
+//   user = req.body
+//   db.none("UPDATE users SET name=$1, email=$2, password=$3 WHERE id=$4",
+//     [user.name,user.email,user.password,user.id]).then(function(data){
+//       console.log('it worked')
+//       res.json(user)
+//     })
+// })
 
-app.delete('/users/:id',function(req,res){
-  id = req.params.id
-  db.none("DELETE FROM users WHERE id=$1",[id]).then(function(data){
-      console.log('yay, deleted')
-      res.render('index')
-    })
-});
+// app.delete('/users/:id',function(req,res){
+//   id = req.params.id
+//   db.none("DELETE FROM users WHERE id=$1",[id]).then(function(data){
+//       console.log('yay, deleted')
+//       res.render('index')
+//     })
+// });
 
-app.get('/sessions/create',function(req,res){
-  res.render('index')
-});
 
 app.post('/sessions/create', function(req, res) {
   var email = req.body.email;
   var password = req.body.password;
   var auth_error = 'Incorrect Email / Password!';
+
+  app.get('/sessions/create',function(req,res){
+  res.render('create')
+});
+
+// app.get('/sessions/create', function(req,res){
+//   res.render('sessions/new')
+// });
 
   db.one(
     "SELECT * FROM users WHERE email = $1",
@@ -149,6 +150,8 @@ app.post('/users/create',function(req, res){
 app.get('/users/create', function(req,res){
   res.render('users/create')
 });
+
+
 
 // This is sample code from the whitehouse node module. Guessing this would actually go in my script.js as that's where currenct Ajax/API call is taking place.
 // var wh = require('whitehouse'),

@@ -31,13 +31,14 @@ function ajaxcall(keyword){
       }
     }); // ends ajax call
   }
-//This takes the text entered into search field box and passes to AJAX
-    // $('body').on("click", "#submit", function(e){
-    //     e.preventDefault();
-    //     var searchstuff = $('#search-keyword').val();
-    //     console.log(searchstuff);
-    //     ajaxcall(searchstuff)
-    // });
+
+This takes the text entered into search field box and passes to AJAX
+    $('body').on("click", "#submit", function(e){
+        e.preventDefault();
+        var searchstuff = $('#search-keyword').val();
+        console.log(searchstuff);
+        ajaxcall(searchstuff)
+    });
 
 
 
@@ -54,48 +55,57 @@ function ajaxcall(keyword){
 //     })
 //   })
 
-  // $('#edituser').on('submit',function(e){
-  //   console.log('edit user worked')
-  //   e.preventDefault()
+//   $('#edituser').on('submit',function(e){
+//     console.log('edit user worked')
+//     e.preventDefault()
 
-  //   id = $(this).attr('data-id')
-  //   name = $(this).children('#name').val()
-  //   email = $(this).children('#email').val()
-  //   password = $(this).children('#password').val()
+//     id = $(this).attr('data-id')
+//     name = $(this).children('#name').val()
+//     email = $(this).children('#email').val()
+//     password = $(this).children('#password').val()
 
-  //   user = {id:id,name:name,email:email,password:password}
-  //   $.ajax({
-  //     "url":"/users/new",
-  //     "method":"PUT",
-  //     "data":user,
-  //     "success": function(data){
-  //       console.log('successfully put')
-  //     }
-  //   })
-  // });
-
-
-  // $('#createuser').on('submit',function(e){
-  //   e.preventDefault()
-
-  //   name = $(this).children('#name').val()
-  //   email = $(this).children('#email').val()
-  //   password = $(this).children('#password').val()
-
-  //   user = {name:name,email:email,password:password}
-
-  //   $.ajax({
-  //     "url": "users/create",
-  //     "method": "POST",
-  //     "data": user,
-  //     "success": function(data){
-  //       console.log('worked')
-  //       window.location.replace("users/create")
-  //     }
-  //   })
-  // });
+//     user = {id:id,name:name,email:email,password:password}
+//     $.ajax({
+//       "url":"/users/new",
+//       "method":"PUT",
+//       "data":user,
+//       "success": function(data){
+//         console.log('successfully put')
+//       }
+//     })
+//   });
 
 
+//   $('#createuser').on('submit',function(e){
+//     e.preventDefault()
+
+//     name = $(this).children('#name').val()
+//     email = $(this).children('#email').val()
+//     password = $(this).children('#password').val()
+
+//     user = {name:name,email:email,password:password}
+
+//     $.ajax({
+//       "url": "users/create",
+//       "method": "POST",
+//       "data": user,
+//       "success": function(data){
+//         console.log('worked')
+//         window.location.replace("users/create")
+//       }
+//     })
+//   });
+
+//     $.ajax({
+//       "url": "sessions/create",
+//       "method": "POST",
+//       "data": user,
+//       "success": function(data){
+//         console.log('worked')
+//         window.location.replace("users/create")
+//       }
+//     })
+//   });
 
 // var wh = require('whitehouse'),
 //     whApi = wh.createWhiteHouse()
@@ -105,4 +115,4 @@ function ajaxcall(keyword){
 //   console.log(obj)
 // })
 
-  // });
+  });
