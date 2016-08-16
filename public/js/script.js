@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-
+//This Saves Searches
 function saveSearch(keyword){
       var search = {data: keyword}
       $.ajax({
@@ -16,7 +16,7 @@ function saveSearch(keyword){
       }
     }); // ends ajax call
 }
-
+//This GETS/PULLS my SEARCH DATA
 function ajaxcall(keyword){
     $.ajax({
       "url":"https://api.whitehouse.gov/v1/petitions.json?limit=3%offset=0&title=" + keyword,
@@ -31,27 +31,28 @@ function ajaxcall(keyword){
       }
     }); // ends ajax call
   }
+//This takes the text entered into search field box and passes to AJAX
+    // $('body').on("click", "#submit", function(e){
+    //     e.preventDefault();
+    //     var searchstuff = $('#search-keyword').val();
+    //     console.log(searchstuff);
+    //     ajaxcall(searchstuff)
+    // });
 
-    $('body').on("click", "#submit", function(e){
-        e.preventDefault();
-        var searchstuff = $('#search-keyword').val();
-        console.log(searchstuff);
-        ajaxcall(searchstuff)
 
-    });
 
-$('.deleteuser').on('click',function(e){
-    e.preventDefault()
-    id = $(this).attr('data-id')
-    div = $(this).parent()
-    $.ajax({
-      "url":"http://localhost:3000/users/"+id,
-      "method":"DELETE",
-      "success":function(){
-        $(div).remove()
-      }
-    })
-  })
+// $('.deleteuser').on('click',function(e){
+//     e.preventDefault()
+//     id = $(this).attr('data-id')
+//     div = $(this).parent()
+//     $.ajax({
+//       "url":"users/new",
+//       "method":"DELETE",
+//       "success":function(){
+//         $(div).remove()
+//       }
+//     })
+//   })
 
   $('#edituser').on('submit',function(e){
     console.log('edit user worked')
@@ -64,95 +65,36 @@ $('.deleteuser').on('click',function(e){
 
     user = {id:id,name:name,email:email,password:password}
     $.ajax({
-      "url":"http://localhost:3000/users/"+id,
+      "url":"/users/new",
       "method":"PUT",
       "data":user,
       "success": function(data){
         console.log('successfully put')
       }
     })
-  })
+  });
 
 
-  $('#createuser').on('submit',function(e){
-    e.preventDefault()
+  // $('#createuser').on('submit',function(e){
+  //   e.preventDefault()
 
-    name = $(this).children('#name').val()
-    email = $(this).children('#email').val()
-    password = $(this).children('#password').val()
+  //   name = $(this).children('#name').val()
+  //   email = $(this).children('#email').val()
+  //   password = $(this).children('#password').val()
 
-    user = {name:name,email:email,password:password}
-    // debugger
-    $.ajax({
-      "url": "http://localhost:3000/users",
-      "method": "POST",
-      "data": user,
-      "success": function(data){
-        console.log('this worked.')
-        window.location.replace("http://localhost:3000/users")
-      }
-    })
-  })
+  //   user = {name:name,email:email,password:password}
 
-// $(function(){
-//   console.log('alive.')
-//   $('.deleteuser').on('click',function(e){
-//     e.preventDefault()
-//     id = $(this).attr('data-id')
-//     div = $(this).parent()
-//     $.ajax({
-//       "url":"http://localhost:3000/users/"+id,
-//       "method":"DELETE",
-//       "success":function(){
-//         $(div).remove()
-//       }
-//     })
-//   })
+  //   $.ajax({
+  //     "url": "users/create",
+  //     "method": "POST",
+  //     "data": user,
+  //     "success": function(data){
+  //       console.log('worked')
+  //       window.location.replace("users/create")
+  //     }
+  //   })
+  // });
 
-
-//   $('#edituser').on('submit',function(e){
-//     console.log('omg you submitted brah')
-//     e.preventDefault()
-
-//     id = $(this).attr('data-id')
-//     name = $(this).children('#name').val()
-//     email = $(this).children('#email').val()
-//     password = $(this).children('#password').val()
-
-//     user = {id:id,name:name,email:email,password:password}
-//     $.ajax({
-//       "url":"http://localhost:3000/users/"+id,
-//       "method":"PUT",
-//       "data":user,
-//       "success": function(data){
-//         console.log('ajax call was good bro!')
-//       }
-//     })
-//   })
-
-
-//   $('#createuser').on('submit',function(e){
-//     e.preventDefault()
-
-//     name = $(this).children('#name').val()
-//     email = $(this).children('#email').val()
-//     password = $(this).children('#password').val()
-
-//     user = {name:name,email:email,password:password}
-//     // debugger
-//     $.ajax({
-//       "url": "http://localhost:3000/users",
-//       "method": "POST",
-//       "data": user,
-//       "success": function(data){
-//         console.log('ajax call was good.')
-//         window.location.replace("http://localhost:3000/users")
-//       }
-//     })
-//   })
-
-
-// })
 
 
 // var wh = require('whitehouse'),
@@ -163,4 +105,4 @@ $('.deleteuser').on('click',function(e){
 //   console.log(obj)
 // })
 
-  });
+  // });

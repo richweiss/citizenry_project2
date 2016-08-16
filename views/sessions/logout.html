@@ -3,22 +3,22 @@
   <head>
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <div class="main-container">
       <div class="border-container">
-        <h1>Signup for Citizenry!</h1>
+        <h1>CITIZENRY</h1>
         <div class="col-lg-6 center-block">
           <div class="well bs-component">
             {{#error}}
             <div class="alert alert-dismissible alert-danger">
-              <strong>Oy vey<strong> {{error}}
+              <strong>Uh Oh!</strong> {{error}}
             </div>
             {{/error}}
-            <form class="form-horizontal" action="/users/create" method="post">
+            <form class="form-horizontal" action="/sessions/create" method="post">
               <fieldset>
-                <legend>Sign Up</legend>
+                <legend>Login</legend>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                   <div class="col-lg-10">
@@ -33,12 +33,13 @@
                 </div>
                 <div class="form-group">
                   <div class="col-lg-10 col-lg-offset-2">
-                    <button type="submit" class="btn btn-primary">Join!</button>
+                    <button type="submit" class="btn btn-primary">Login</button>
                   </div>
                 </div>
               </fieldset>
             </form>
           </div>
+          <p>Not a member? <a href="/users/new">Sign Up!</a></p>
         </div>
       </div>
     </div>

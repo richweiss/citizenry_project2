@@ -14,15 +14,16 @@ Bryan stuff - form & encryption/authorization
  - eliminates #3 & #5
 
 IDEAS
-
-app that ….
+<!-- 
+  Scrapped Idea:  
+    app that ….
     - pulls songs from soundcloud
     - connects them wth P4k review (JOIN TABLES)
-    - users can POST comments (forum) 
+    - users can POST comments (forum) --> 
  
     Find a Problem: I want people to go take their political rants elsewhere so facebook feeds can be decluttered and focused on what really matters between friends: FOMO creation, stalking your ex's, and silly videos of cats & dogs. 
 
-        Idea: Citizenry - an activism site/app where users can research and discuss political views with opportunities to contribute to petitions or meet IRL.
+    Working Idea: Citizenry - an activism site/app where users can research and discuss political views with opportunities to contribute to petitions or meet IRL.
 
         User Stories: As a User, I want to... 
                       * search Petitions by Search Type/Topic
@@ -87,9 +88,43 @@ Next Steps
         - sessions setup - sign up , log in , create users, 
         - grab from server - add to DB 
 
+Day 3 & 4 | Aug 13th & 14th
 
+    * Confusion & Disjointed Thoughts = Panic, Fear, & Self-Doubt 
 
+    * Tacked on code for updating Users and Deleting. 
 
+    * Need to touch new html.files, subfolders so app.js routes have a home.
+
+    * Adjusted app.js so Login page appears, not Welcome page with Search button.
+
+Day 5 | Aug 15th
+
+    * Starting to write commentary in app.js to describe what each thing is DOING or trying to DO. 
+
+        - Source of weekend struggles was looking at code, then having an idea of what it did, but then jumping between different parts until the logic became overwhelming. This "breadcrumb" trail of comments should keep me steered in the right direction.
+
+    * Classmate informed me we didn't need to utilize our app.js (?) at all after using boilerplate and work only in script.js. Not totally sure if that is accurate, but if so oy vey.
+
+    * Coding paralysis - have been looking to eliminate sessions/create & users/create htmls. 
+
+        - Need to to login - have session saved.
+        - Redirect to users/index = (You are logged-in now Search) 
+        - Have commented out additional code in app.js & script.js until above issues are resolved.
+
+        - Asked classmate Mike for help via pseudocode out loud. Appending issues most likely from giving res.render('filepath') but not feeding it any data res.render('filepath', data)
+
+        - node error ocurring. Q'ng Jared for help
+
+        - Revisiting after break. Going back to Login. Not saving. Am I telling it to save? CREATE USER in script.js. This has to happen in Sign-up page.
+           Problem: (*UPDATE: RESOLVED stepped away and tried a few things*) Sign-up page not appearing on DOM. http://localhost:3000/users/new
+                -looking at app.js for fix
+                    - this does not work, needs second value? Can't remember
+                        app.get('users/new', function(req,res){
+                        res.render('new')
+                      
+            - New Problem: users/create says (cannot post /users/create) - SAVING LOGIN SESSION
+            - Is my 'click' picking up both sets of from Search Petitions and Submit for Create User?
 
 
 
