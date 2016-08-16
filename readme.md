@@ -58,6 +58,10 @@ Day 2 | Aug 12th
 
 * Added 'click' to script.js', check html usage
 
+[Notes Whiteboard](http://i.imgur.com/GFQ9oa0.jpg)
+[Wireframe draft](http://i.imgur.com/WOTIufB.png)
+[Search draft](http://i.imgur.com/m7aALVY.png)
+
 # Notes 
     - script.js = 
         front-end, 
@@ -80,8 +84,8 @@ Day 2 | Aug 12th
                         - THEN saving those SEARCHES into my DB - how do I do this? 
                                     - Will I need to "UPDATE TABLE searches" in schema.sql/seeds.sql
     - Other Inquiries:
-        -  what is this ROUTES folder doing & do I need to utilize it?
-        - Bryan's db is auth/ - should I create another one or using this one is ok? I'm assuming the latter, but need to check. 
+        -  what is this ROUTES folder doing & do I need to utilize it? (*We commented out router in app.js, will set up routes there*)
+        - Bryan's db is auth/ - should I create another one or using this one is ok? I'm assuming the latter, but need to check. (*This one was ok*)
 
 
 Next Steps
@@ -114,7 +118,7 @@ Day 5 | Aug 15th
 
         - Asked classmate Mike for help via pseudocode out loud. Appending issues most likely from giving res.render('filepath') but not feeding it any data res.render('filepath', data)
 
-        - node error ocurring. Q'ng Jared for help
+        - node error ocurring. Queing Slack for help
 
         - Revisiting after break. Going back to Login. Not saving. Am I telling it to save? CREATE USER in script.js. This has to happen in Sign-up page.
            Problem: (*UPDATE: RESOLVED stepped away and tried a few things*) Sign-up page not appearing on DOM. http://localhost:3000/users/new
@@ -126,6 +130,17 @@ Day 5 | Aug 15th
             - New Problem: users/create says (cannot post /users/create) - SAVING LOGIN SESSION
             - Is my 'click' picking up both sets of from Search Petitions and Submit for Create User?
 
+    * Irwin help: 
+        - Discovered Login Issues were because on Day 2 when I unlinked router folders and the Login, Bcrypt, and Saving Users to DB.
+        next steps: connecting app.post('/sessions/create', in app.js
+
+Day 6 | Aug 16th
+    
+    * Reviewing Irwin's next steps: connecting app.post('/sessions/create', in app.js
+
+    * If I get stuck I need to get the following done while waiting for help:
+
+        - Google Materialize for CSS - Login, Signup, and /sessions/new
 
 
 

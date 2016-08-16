@@ -44,6 +44,7 @@ app.post('/searches', function(req, res){
   db.none('INSERT INTO searches (searchentry) VALUES ($1)', [req.body.data])
   console.log('create done')
 });
+
 //This is routing SEARCH RESULT DATA to which index? *REVISIT*
 // res. render('index', data);
 

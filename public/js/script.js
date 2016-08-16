@@ -54,25 +54,25 @@ function ajaxcall(keyword){
 //     })
 //   })
 
-  $('#edituser').on('submit',function(e){
-    console.log('edit user worked')
-    e.preventDefault()
+  // $('#edituser').on('submit',function(e){
+  //   console.log('edit user worked')
+  //   e.preventDefault()
 
-    id = $(this).attr('data-id')
-    name = $(this).children('#name').val()
-    email = $(this).children('#email').val()
-    password = $(this).children('#password').val()
+  //   id = $(this).attr('data-id')
+  //   name = $(this).children('#name').val()
+  //   email = $(this).children('#email').val()
+  //   password = $(this).children('#password').val()
 
-    user = {id:id,name:name,email:email,password:password}
-    $.ajax({
-      "url":"/users/new",
-      "method":"PUT",
-      "data":user,
-      "success": function(data){
-        console.log('successfully put')
-      }
-    })
-  });
+  //   user = {id:id,name:name,email:email,password:password}
+  //   $.ajax({
+  //     "url":"/users/new",
+  //     "method":"PUT",
+  //     "data":user,
+  //     "success": function(data){
+  //       console.log('successfully put')
+  //     }
+  //   })
+  // });
 
 
   // $('#createuser').on('submit',function(e){
