@@ -101,7 +101,7 @@ Next Steps
 
 Day 3 & 4 | Aug 13th & 14th
 
-    * Confusion & Disjointed Thoughts = Panic, Fear, & Self-Doubt 
+    * Confusion on why routes and log-in are not running correctly.
 
     * Tacked on code for updating Users and Deleting. 
 
@@ -117,7 +117,7 @@ Day 5 | Aug 15th
 
     * Classmate informed me we didn't need to utilize our app.js (?) at all after using boilerplate and work only in script.js. Not totally sure if that is accurate, but if so oy vey.
 
-    * Coding paralysis - have been looking to eliminate sessions/create & users/create htmls. 
+    *  Feeling stuck - have been looking to eliminate sessions/create & users/create htmls. 
 
         - Need to to login - have session saved.
         - Redirect to users/index = (You are logged-in now Search) 
@@ -125,7 +125,7 @@ Day 5 | Aug 15th
 
         - Asked classmate Mike for help via pseudocode out loud. Appending issues most likely from giving res.render('filepath') but not feeding it any data res.render('filepath', data)
 
-        - node error ocurring. Queing Slack for help
+        - node error ocurring. Queing Slack for help.
 
         - Revisiting after break. Going back to Login. Not saving. Am I telling it to save? CREATE USER in script.js. This has to happen in Sign-up page.
            Problem: (*UPDATE: RESOLVED stepped away and tried a few things*) Sign-up page not appearing on DOM. http://localhost:3000/users/new
@@ -144,6 +144,8 @@ Day 5 | Aug 15th
 Day 6 | Aug 16th
     
     * Reviewing Irwin's next steps: connecting app.post('/sessions/create', in app.js
+
+    * Since I'm getting issues because I disconnected the routes (kills db.js, login, signup, etc) going to load boilerplate into a different folder and seeing what I can do from there. If successful will scrap this original folder and replace code. 
 
     * If I get stuck I need to get the following done while waiting for help:
 
