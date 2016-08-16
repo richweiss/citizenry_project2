@@ -58,6 +58,8 @@ Day 2 | Aug 12th
 
 * Added 'click' to script.js', check html usage
 
+[fun White House Node Module that I didn't use](http://i.imgur.com/7bTyOmQ.png)
+
 [Trello w/ User Stories & MVP](http://i.imgur.com/ch4Q5gw.png)
 
 [Notes Whiteboard](http://i.imgur.com/GFQ9oa0.jpg)
