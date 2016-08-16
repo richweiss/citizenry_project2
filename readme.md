@@ -58,8 +58,12 @@ Day 2 | Aug 12th
 
 * Added 'click' to script.js', check html usage
 
+[Trello w/ User Stories & MVP](http://i.imgur.com/ch4Q5gw.png)
+
 [Notes Whiteboard](http://i.imgur.com/GFQ9oa0.jpg)
+
 [Wireframe draft](http://i.imgur.com/WOTIufB.png)
+
 [Search draft](http://i.imgur.com/m7aALVY.png)
 
 # Notes 
@@ -74,7 +78,8 @@ Day 2 | Aug 12th
                 -display from our DB (using res.render)
     - use MUSTACHE later to view linked DB info in HTML's
 
-# Inquiries - UPDATE: Jared was able to help with Main Issue & answer all inquiries. He is a rock star! Still confused a bit on the ROUTES section, but everything is very clear. 
+* Inquiries - UPDATE: Jared was able to help with Main Issue & answer all inquiries. He is a rock star! Still confused a bit on the ROUTES section, but everything is very clear. 
+
     - MAIN ISSUE: creating my SEARCH form (do I do this under USERS folder to touch a new html?) for users already LOGGED IN
                 
                 - THEN connecting that to 'click' button in script.js to html where SEARCH box is
