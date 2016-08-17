@@ -27,7 +27,11 @@ app.use(session({
 
 // this is my Login Page - works!
 app.get('/', function(req,res){
-  res.render('sessions/new')
+  if(req.session.user){
+    res.render('index');
+  } else {
+    res.render('sessions/new');
+  }
 });
 //this is my Signup Page - works!
 app.get('/users/new', function(req,res){
@@ -44,16 +48,16 @@ app.post('/searches', function(req, res){
 //This is routing SEARCH RESULT DATA to which index? *REVISIT*
 // res. render('index', data);
 
-// app.get('/searches', function(req, res){
-//   db.any('SELECT * FROM searches').then(function(data){
-//     var search_data = {
-//       "User": "User_ID",
-//       "Searches": data
-//     });
+app.get('/searches', function(req, res){
+  db.any('SELECT * FROM searches').then(function(data){
+    var search_data = {
+      "User": "User_ID",
+      "Searches": data
+    };
 
-  // res.render('index', search_data);
-//   });
-// });
+  res.render('index', search_data);
+  });
+});
 
 
 // app.get('/users',function(req,res){
@@ -93,20 +97,13 @@ app.post('/sessions/create', function(req, res) {
   var password = req.body.password;
   var auth_error = 'Incorrect Email / Password!';
 
-  app.get('/sessions/create',function(req,res){
-  res.render('create')
-});
-
-// app.get('/sessions/create', function(req,res){
-//   res.render('sessions/new')
-// });
-
-  db.one(
+   db.one(
     "SELECT * FROM users WHERE email = $1",
     [email]
   ).catch(function(){
     res.error = auth_error;
-    next();
+    console.log('error creating user: ' + res.error);
+    res.redirect('/');
   }).then(function(user){
     bcrypt.compare(
       password,
@@ -116,15 +113,21 @@ app.post('/sessions/create', function(req, res) {
           req.session.user = {
             'email': user.email
           };
-          next();
+          console.log('User successfully logged in!')
+          res.redirect('/');
         } else {
           res.error = auth_error;
-          next();
+          res.redirect('/');
         }
       }
     );
   });
 });
+
+// app.get('/sessions/create', function(req,res){
+//   res.render('sessions/new')
+// });
+
 
 app.post('/users/create',function(req, res){
   console.log(req.body);
@@ -134,15 +137,14 @@ app.post('/users/create',function(req, res){
       "INSERT INTO users (email, password_digest) VALUES ($1, $2)",
       [user.email, hashed_password]
     ).catch(function(){
-      // res.error = 'Error. User could not be created.';
-      // next();
-    }).then(function(user){
+      res.error = 'Error. User could not be created.';
+      console.log(res.error);
+      res.redirect('/');
+    }).then(function(){
       req.session.user = {
-        'email': email
+        'email': user.email
       };
-      console.log('success')
-      res.redirect('../')
-      // next();
+      res.redirect('/');
     });
   });
 });

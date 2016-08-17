@@ -32,7 +32,7 @@ function ajaxcall(keyword){
     }); // ends ajax call
   }
 
-This takes the text entered into search field box and passes to AJAX
+// This takes the text entered into search field box and passes to AJAX
     $('body').on("click", "#submit", function(e){
         e.preventDefault();
         var searchstuff = $('#search-keyword').val();

@@ -64,9 +64,9 @@ IDEAS
 
 [Notes Whiteboard](http://i.imgur.com/GFQ9oa0.jpg)
 
-[Wireframe draft](http://i.imgur.com/WOTIufB.png)
+[Search draft](http://i.imgur.com/WOTIufB.png)
 
-[Search draft](http://i.imgur.com/m7aALVY.png)
+[Wireframe draft](http://i.imgur.com/m7aALVY.png)
 
 * Notes 
     - script.js = 
@@ -151,10 +151,15 @@ Next Steps
 
         - This page loads correctly in TEST FOLDER where it does not in Citizenry App: http://localhost:4000/sessions/new
 
+        - Queing for help to see if current .js files can be salvaged or scrapped and start with original boilerplate. 
 
-    * If I get stuck I need to get the following done while waiting for help:
+    * Bryan helped with Loginpage path failure and helped breakdown what is exactly happening with my POST sessions/create. 
 
-        - Google Materialize for CSS - Login, Signup, and /sessions/new
+    * Attempting to render searchData to DOM ('index')
+
+    * At some point need to push to new heroku.
+
+
 
 
 
