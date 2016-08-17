@@ -14,12 +14,12 @@ Bryan stuff - form & encryption/authorization
  - eliminates #3 & #5
 
 IDEAS
-<!-- 
+
   Scrapped Idea:  
     app that ….
     - pulls songs from soundcloud
     - connects them wth P4k review (JOIN TABLES)
-    - users can POST comments (forum) --> 
+    - users can POST comments (forum)
  
     Find a Problem: I want people to go take their political rants elsewhere so facebook feeds can be decluttered and focused on what really matters between friends: FOMO creation, stalking your ex's, and silly videos of cats & dogs. 
 
