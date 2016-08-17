@@ -157,7 +157,7 @@ Next Steps
 
     * Attempting to render searchData to DOM ('index')
 
-    * At some point need to push to new heroku.
+    * Attempted pushing to heroku - stopped. Confused on whether I should PSQL and run db/seeds.sql file in general Citizenry folder. If I do the former the db rich=# appears, but my db that has my table is auth.
 
 
 
